@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+<style>
+
+
+
+*{
+    padding : 5;
+    margin: 5;
+}
+
+#top_nav {
+  
+   justify-content: center;
+    align-items: center;
+   
+}
+.navmenu-purple, .navbar-purple {
+    background-color: #2D303C;
+    border-color: #1b1b25;
+   
+}
+
+
+.nav-link:hover {
+    color: #ff8456;
+    
+}
+
+#ETM_navbar{
+  
+  align-items: center;
+  color: #b15a38;
+    
+}
+.ul{
+    color: #e36f4b;
+}
+.navcontainer{
+  align-items: center;
+  margin-top: 5%;
+}
+
+.nav-item{
+    color: #e36f4b;
+}
+#btn{
+    background-color: #ff8456;
+    color: white;
+    border-color: #e36f4b;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+#btn:hover {
+    background-color:  #b15a38; /* Highlighted background color */
+}
+#msg{
+    color: #ff8456;
+    text-decoration: none;
+}
+#msg:hover{
+    text-decoration: underline;
+    color: #ff8456;
+}
+
+/*body*/
+.rec-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    justify-content:space-around;
+}
+
+
+
+
+.card-body {
+
+    width: 180px; /* Set fixed width */
+    height: 100px; /* Set fixed height */
+}
+
+
+.card-img-top {
+            width: 100px; /* Make the image fill the card width */
+            height: 100px; /* Maintain aspect ratio */
+        }
+
+
+    .subfood {
+    display: flex;
+    margin-left: 6%; /* Adjust as needed */
+    margin-top: 10%; /* Adjust as needed */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.subfood:hover {
+    transform: scale(0.97); /* Scale down the card slightly on hover */
+}
+
+
+
+
+.card_title{
+   padding-top: 3%;
+   padding-left: 2%;
+   font-size: 15px; 
+};
+
+.foodlist {
+    margin-left: 10%; /* Adjust the percentage value to dynamically position the element */
+}
+
+
+.blsd{
+    display: flex;
+}
+
+/*body-2*/
+.blsd-2{
+   height: 50rem;
+}  
+
+.headings{
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 3rem;
+}
+p{
+   font-weight: bold;
+}
+.card-text{
+    padding-left: 1rem;
+}
+.secpagecards{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.dri-heading h1 {
+    font-family: 'Arial', sans-serif; /* Choose an appropriate font */
+    font-size: 3rem; /* Adjust the font size as needed */
+    color: #333; /* Choose a suitable color */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Add a subtle text shadow */
+}
+
+.dri-heading h1:hover {
+    color: #ff4500; /* Change the color on hover */
+}
+
+.h66{
+    margin-left: 5%;
+}
+.cardbtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+#bbtn{
+    background-color: #ff8456;
+    color: white;
+    border-color: #e36f4b;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+#bbtn:hover {
+    background-color:  #b15a38; /* Highlighted background color */
+}
+.selected {
+    border: 2px solid #ff8456; /* Border color for selected card */
+    box-shadow: 0 0 10px rgba(255, 132, 86, 0.5); /* Add a shadow effect */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease; /* Add transition for smooth animation */
+    transform: scale(0.95); /* Scale down the card slightly */
+}
+
+.selected:hover {
+    border: 2px solid #ff8456; /* Maintain border color on hover */
+    box-shadow: 0 0 15px rgba(255, 132, 86, 0.7); /* Increase shadow effect on hover */
+    transform: scale(0.98); /* Scale down the card slightly on hover */
+}
+
+ /* Custom style for adding shadow to the container */
+ .custom-container {
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+            width: 80%;
+        }
+ .table-custom {
+            width: 50%; /* Adjust the width as needed */
+            margin: auto; /* Center the table */
+        }
+        /* Custom style for making the top layer darker */
+.table-darken thead {
+            background-color: #343a40; /* Dark background color */
+            color: #ffffff; /* Text color for better readability */
+        }
+    .containercard {
+    width: 100%;
+    max-height: 60vh; /* Set a maximum height for the container relative to the viewport height */
+    overflow-y: auto; /* Add vertical scroll if content overflows */
+}
+
+</style>
+
+
+
+    <title>Document</title>
+</head>
+<body>
+
+
+
+
+
+    <div class="col-md-12 text-center dri-heading">
+        <h1>Macro- Nutrient Values</h1>
+    </div>
+    
+    <div class="container custom-container"> <!-- Added the container class and custom shadow -->
+        <table class="table table-hover table-darken">
+            <thead>
+                <tr>
+                    <th scope="col">Macro-Nutrient</th>
+                    <th scope="col">Breakfast</th>
+                    <th scope="col">Lunch</th>
+                    <th scope="col">Snacks</th>
+                    <th scope="col">Dinner</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">Calories</th>
+                    <td>{{ dri_results.breakfast.meal_calories |floatformat:2}}</td>
+                    <td>{{ dri_results.lunch.meal_calories |floatformat:2}}</td>
+                    <td>{{ dri_results.snacks.meal_calories |floatformat:2}}</td>
+                    <td>{{ dri_results.dinner.meal_calories |floatformat:2}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Proteins</th>
+                    <td>{{ dri_results.breakfast.meal_protein |floatformat:2}}</td>
+                    <td>{{ dri_results.lunch.meal_protein |floatformat:2}}</td>
+                    <td>{{ dri_results.snacks.meal_protein |floatformat:2}}</td>
+                    <td>{{ dri_results.dinner.meal_protein |floatformat:2}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Carbohydrate</th>
+                    <td>{{ dri_results.breakfast.meal_carbohydrates |floatformat:2}}</td>
+                    <td>{{ dri_results.lunch.meal_carbohydrates |floatformat:2}}</td>
+                    <td>{{ dri_results.snacks.meal_carbohydrates |floatformat:2}}</td>
+                    <td>{{ dri_results.dinner.meal_carbohydrates |floatformat:2}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Fats</th>
+                    <td>{{ dri_results.breakfast.meal_fat |floatformat:2}}</td>
+                    <td>{{ dri_results.lunch.meal_fat |floatformat:2}}</td>
+                    <td>{{ dri_results.snacks.meal_fat |floatformat:2}}</td>
+                    <td>{{ dri_results.dinner.meal_fat |floatformat:2}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    <!--body-->
+    <div class="rec-container">
+        <div class="breakfast">
+           <h3>Breakfast</h3> 
+        </div>
+        <div class="lunch">
+           <h3>Lunch</h3>
+        </div>
+        <div class="snacks">
+            <h3>Snacks</h3>
+        </div>
+        <div class="dinner">
+           <h3>Dinner</h3> 
+        </div>
+
+    </div>
+
+    <div class="blsd">
+
+
+        <div class="containercard">
+      <div class="breakfast">
+        {% for breakfast_recipe in recommended_recipes_by_meal.breakfast %}
+        <div class="subfood" id="card{{ forloop.counter }}" data-id="{{ breakfast_recipe.ID }}">
+            <div class="card">
+                <img class="card-img-top" src="{{ breakfast_recipe.Images }}" alt="Card image cap">
+            </div>
+            <div class="card-body">
+                <h5 class="card_title" style="text-align: center;">{{ breakfast_recipe.Name }}</h5>
+            <p style="text-align: center;">Calories: {{ breakfast_recipe.Calories }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>    
+    
+        
+    <div class="containercard">
+        <div class="lunch">
+            {% for lunch_recipe in recommended_recipes_by_meal.lunch %}
+            <div class="subfood" id="card{{ forloop.counter }}" data-id="{{ lunch_recipe.ID }}">
+                <div class="card">
+                    <img class="card-img-top" src="{{ lunch_recipe.Images }}" alt="Card image cap">
+                </div>
+                <div class="card-body">
+                    <h5 class="card_title" style="text-align: center;">{{ lunch_recipe.Name }}</h5>
+            <p style="text-align: center;">Calories: {{ lunch_recipe.Calories }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    
+
+    <div class="containercard">
+    <div class="snacks">
+      {% for snacks_recipe in recommended_recipes_by_meal.snacks %}
+      <div class="subfood" id="card{{ forloop.counter }}" data-id="{{ snacks_recipe.ID }}">
+          <div class="card">
+              <img class="card-img-top" src="{{ snacks_recipe.Images }}" alt="Card image cap">
+          </div>
+          <div class="card-body">
+            <h5 class="card_title" style="text-align: center;">{{ snacks_recipe.Name }}</h5>
+            <p style="text-align: center;">Calories: {{ snacks_recipe.Calories }}</p>
+          </div>
+      </div>
+      {% endfor %}
+  </div>
+</div>
+
+
+
+
+
+
+
+  <div class="containercard">
+    <div class="dinner">
+      {% for dinner_recipe in recommended_recipes_by_meal.dinner %}
+      <div class="subfood" id="card{{ forloop.counter }}" data-id="{{ dinner_recipe.ID }}">
+          <div class="card">
+              <img class="card-img-top" src="{{ dinner_recipe.Images }}" alt="Card image cap">
+          </div>
+          <div class="card-body">
+            <h5 class="card_title" style="text-align: center;">{{ dinner_recipe.Name }}</h5>
+            <p style="text-align: center;">Calories: {{ dinner_recipe.Calories }}</p>
+            
+          </div>
+      </div>
+      {% endfor %}
+  </div>
+</div>
+
+                        
+    </div>
+
+ 
+    <div class="cardbtn">
+      <a href="details/" class="btn btn-primary">Submit</a>
+  </div>
+  
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function() {
+      // Function to handle card click
+      $(".subfood").click(function() {
+          // Get the parent container of the clicked card (e.g., 'breakfast', 'lunch', etc.)
+          var mealContainer = $(this).closest('.breakfast, .lunch, .dinner, .snacks');
+  
+          // Remove 'selected' class from all cards within the same meal type container
+          mealContainer.find('.subfood').removeClass('selected');
+  
+          // Add 'selected' class to the clicked card
+          $(this).addClass('selected');
+  
+          // Extract food name from the card
+          var foodName = $(this).find(".card_title").text();
+  
+          // Extract food ID from the data-id attribute of the subfood element
+          var foodID = $(this).attr('data-id');
+  
+          // Determine meal type based on the parent container class
+          var mealType = mealContainer.attr('class');
+  
+          // Send AJAX request to Django backend
+          $.ajax({
+              type: "POST",
+              url: "/save_food/",
+              data: {
+                  'meal_type': mealType,
+                  'food_name': foodName,
+                  'food_id': foodID,  // Include food ID in the data sent to backend
+                  'csrfmiddlewaretoken': '{{ csrf_token }}'
+              },
+              success: function(response) {
+                  console.log("Food name and ID saved:", foodName, foodID);
+              },
+              error: function(xhr, errmsg, err) {
+                  console.log(xhr.status + ": " + xhr.responseText); // Log any errors
+              }
+          });
+      });
+  });
+  </script>
+  
+  
+
+</body>
+</html>

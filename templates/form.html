@@ -1,0 +1,182 @@
+
+<title>Health Form</title>
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<style>
+    body {
+        background-color: #f4f4f4;
+    }
+
+    .container {
+        margin-top: 50px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        padding: 20px;
+        background-color: #fff;
+        max-width: 500px;
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-weight: bold;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    label {
+font-weight: bold;
+font-size: 18px; /* Increased font size for labels */
+}
+
+/* Increase the size of radio buttons */
+.form-check-input[type="radio"] {
+width: 1.3em;
+height: 1.3em;
+}
+
+    input[type="text"],
+    input[type="number"],
+    input[type="range"],
+    button {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        box-sizing: border-box;
+        margin-top: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        box-sizing: border-box;
+        margin-top: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    button[type="submit"] {
+        border: none;
+        border-radius: 3px;
+        padding: 10px;
+        background-color: #007bff;
+        color: #fff;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        width: 100%;
+    }
+
+    button[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+<h2>Health Information</h2>
+<form method="post" action="{% url 'recommend_recipe' %}">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required>
+    </div>
+
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="weight">Weight (Kg):</label>
+            <input type="number" id="weight" name="weight" required>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="height">Height (cm):</label>
+            <input type="number" id="height" name="height" required>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Gender:</label>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="gender" id="gender1" value="male">
+            <label class="form-check-label" for="gender1">Male</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="gender" id="gender2" value="female">
+            <label class="form-check-label" for="gender2">Female</label>
+        </div>
+    </div>
+
+
+
+    <div class="form-group">
+        <label for="allergy">Allergy:</label>
+        <select id="allergy" name="allergy" class="form-control">
+            <option value="none">None</option>
+            <option value="peanut">Peanut</option>
+            <option value="gluten">Gluten</option>
+            <option value="dairy">Dairy</option>
+            <option value="shellfish">Shellfish</option>
+            <option value="other">Other</option>
+        </select>
+    </div>
+
+
+
+
+    <div class="form-group">
+        <label>Diet:</label>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="preference" id="diet1" value="yes">
+            <label class="form-check-label" for="diet1">Veg</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="preference" id="diet2" value="no">
+            <label class="form-check-label" for="diet2">Non-Veg</label>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label for="activity_level">Activity Level:</label>
+        <select id="activity_level" name="activity_level" class="form-control">
+            <option value="sedentary">No Exercise</option>
+            <option value="lightly_active"> 2/Week</option>
+            <option value="moderately_active">4 Days/Week</option>
+            <option value="active">6 Days/Week</option>
+            <option value="very_active">Daily Exercise</option>
+        </select>
+    </div>
+
+
+    <div class="form-group">
+        <label>Goal:</label>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="goal" id="goal1" value="loss">
+            <label class="form-check-label" for="goal1">Loss</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="goal" id="goal2" value="maintenance">
+            <label class="form-check-label" for="goal2">Maintain</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="goal" id="goal3" value="gain">
+            <label class="form-check-label" for="goal3">Gain</label>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="keywords">Keywords:</label>
+        <input type="text" id="keywords" name="keywords" required>
+    </div>
+
+
+
+    <button type="submit"  value="Submit">Submit</button>
+</form>
+</div>
+</body>
+</html>

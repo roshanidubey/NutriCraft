@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+<style>
+
+
+
+*{
+    padding : 0;
+    margin: 0;
+}
+
+#top_nav {
+  
+   justify-content: center;
+    align-items: center;
+   
+}
+.navmenu-purple, .navbar-purple {
+    background-color: #2D303C;
+    border-color: #1b1b25;
+   
+}
+
+
+.nav-link:hover {
+    color: #ff8456;
+    
+}
+
+#ETM_navbar{
+  
+  align-items: center;
+  color: #b15a38;
+    
+}
+.ul{
+    color: #e36f4b;
+}
+.navcontainer{
+  align-items: center;
+  margin-top: 0%;
+}
+
+.nav-item{
+    color: #e36f4b;
+}
+#btn{
+    background-color: #ff8456;
+    color: white;
+    border-color: #e36f4b;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+#btn:hover {
+    background-color:  #b15a38; /* Highlighted background color */
+}
+#msg{
+    color: #ff8456;
+    text-decoration: none;
+}
+#msg:hover{
+    text-decoration: underline;
+    color: #ff8456;
+}
+
+/*body*/
+.rec-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    justify-content:space-around;
+}
+
+
+
+
+.card-body {
+
+    width: 200px; /* Set fixed width */
+    height: 100px; /* Set fixed height */
+}
+
+
+.card-img-top {
+            width: 287px; /* Make the image fill the card width */
+            height: 200px; /* Maintain aspect ratio */
+        }
+
+
+.subfood{
+    display: flex;
+    margin-left: 142px;
+    margin-top: 30px;
+    box-shadow: 3cm;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+ 
+}
+
+
+.card_title{
+   padding-top: 3%;
+   padding-left: 2%;
+   font-size: 15px; 
+};
+
+.foodlist{
+    margin-left: 1000px;
+}
+
+.blsd{
+    display: flex;
+}
+
+/*body-2*/
+.blsd-2{
+   height: 50rem;
+}  
+
+.headings{
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 3rem;
+}
+p{
+   font-weight: bold;
+}
+.card-text{
+    padding-left: 1rem;
+}
+.secpagecards{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+.h66{
+    margin-left: 5%;
+}
+.cardbtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+#bbtn{
+    background-color: #ff8456;
+    color: white;
+    border-color: #e36f4b;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+#bbtn:hover {
+    background-color:  #b15a38; /* Highlighted background color */
+}
+
+
+
+
+
+
+
+</style>
+
+
+
+    <title>Document</title>
+</head>
+<body>   
+   
+   
+   <!--secpg-blsd2-->
+   <div class="blsd-2">
+    <div class="headings">
+      <div class="breakfast-2">
+          <h5>Breakfast</h5>
+      </div>
+      <div class="lunch-2">
+          <h5>Lunch</h5>
+      </div>
+      <div class="snacks-2">
+          <h5>Snacks</h5>
+      </div>
+      <div class="dinner-2">
+          <h5>Dinner</h5>
+      </div>
+    </div>
+      
+    <div class="secpagecards">
+    <div class="card" style="width: 18rem;">
+      <img src="{{ food_details_by_meal.breakfast.Images }}" class="card-img-top" alt="...">
+      <div class="card_body">
+        <h5 class="card-title" style="margin-left: 17%;">{{ food_details_by_meal.breakfast.Name }}</h5>
+        <p class="card-text"><p class="inti" style="margin-left: 5%;">Ingredients:</p>
+        <h6 class="h66" style="align-items: center;">paneer,onions,yogurt,garlic paste,cooking oil,red chilli powder,turmeric powder,garam masala,salt,lemon juice.</h6>
+      
+      </p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><p>Recipe:</p>{{ food_details_by_meal.breakfast.RecipeInstructions }}</li>
+        <li class="list-group-item"><p>Nutrients:</p>protiens:{{ food_details_by_meal.breakfast.ProteinContent }} <br>carbohydrates:{{ food_details_by_meal.breakfast.CarbohydrateContent }}<br>fats:{{ food_details_by_meal.breakfast.FatContent }} <br>Calories:{{ food_details_by_meal.breakfast.Calories }}</li>  
+      </ul>  
+    </div>
+
+    <div class="card" style="width: 18rem;">
+      <img src="{{ food_details_by_meal.lunch.Images }}" class="card-img-top" alt="...">
+      <div class="card_body">
+        <h5 class="card-title"  style="margin-left: 17%;">{{ food_details_by_meal.lunch.Name }}</h5>
+        <p class="card-text"><p class="inti" style="margin-left: 5%;">Ingredients:</p>
+        <h6 class="h66" style="align-items: center;">paneer,onions,yogurt,garlic paste,cooking oil,red chilli powder,turmeric powder,garam masala,salt,lemon juice. </h6>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><p>Recipe:</p>{{ food_details_by_meal.lunch.RecipeInstructions }}</li>
+        <li class="list-group-item"><p>Nutrients:</p>protiens:{{ food_details_by_meal.lunch.ProteinContent }} <br>carbohydrates:{{ food_details_by_meal.lunch.CarbohydrateContent }}<br>fats:{{ food_details_by_meal.lunch.FatContent }} <br>Calories:{{ food_details_by_meal.lunch.Calories }}</li>  
+      </ul>  
+    </div>
+
+    <div class="card" style="width: 18rem;">
+      <img src="{{ food_details_by_meal.snacks.Images }}" class="card-img-top" alt="...">
+      <div class="card_body">
+        <h5 class="card-title" style="margin-left: 17%;">{{ food_details_by_meal.snacks.Name }}</h5>
+        <p class="card-text"><p class="inti" style="margin-left: 5%;">Ingredients:</p>
+        <h6 class="h66" style="align-items: center;">paneer,onions,yogurt,garlic paste,cooking oil,red chilli powder,turmeric powder,garam masala,salt,lemon juice. </h6>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><p>Recipe:</p>{{ food_details_by_meal.snacks.RecipeInstructions }}</li>
+        <li class="list-group-item"><p>Nutrients:</p>protiens:{{ food_details_by_meal.snacks.ProteinContent }} <br>carbohydrates:{{ food_details_by_meal.snacks.CarbohydrateContent }}<br>fats:{{ food_details_by_meal.snacks.FatContent }}  <br>Calories:{{ food_details_by_meal.snacks.Calories }}</li>  
+      </ul>  
+    </div>
+
+    <div class="card" style="width: 18rem;">
+      <img src="{{ food_details_by_meal.dinner.Images }}" class="card-img-top" alt="...">
+      <div class="card_body">
+        <h5 class="card-title" style="margin-left: 17%;">{{ food_details_by_meal.dinner.Name }}</h5>
+        <p class="card-text"><p class="inti" style="margin-left: 5%;">Ingredients:</p>
+        <h6 class="h66" style="align-items: center;">paneer,onions,yogurt,garlic paste,cooking oil,red chilli powder,turmeric powder,garam masala,salt,lemon juice. </h6>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><p>Recipe:</p>{{ food_details_by_meal.dinner.RecipeInstructions }}</li>
+        <li class="list-group-item"><p>Nutrients:</p>protiens:{{ food_details_by_meal.dinner.ProteinContent }} <br>carbohydrates:{{ food_details_by_meal.dinner.CarbohydrateContent }}<br>fats:{{ food_details_by_meal.dinner.FatContent }}  <br>Calories:{{ food_details_by_meal.dinner.Calories }}</li>  
+      </ul>  
+    </div>
+
+    
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+
+</body>
+</html>
